@@ -35,3 +35,8 @@ This repository contains a microservices project configured with an API Gateway.
    ```bash
    git clone https://github.com/iammahesh123/Task-Management-System.git
    cd Task-Management-System
+###License
+This project is licensed under the MIT License.
+
+Remember to replace placeholders like `[Your Full Name]`, `[Your Email]`, and `[Your Organization]` with your actual information. Additionally, provide detailed documentation based on your specific microservices and API Gateway configurations.
+
