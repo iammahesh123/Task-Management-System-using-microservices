@@ -33,5 +33,5 @@ This repository contains a microservices project configured with an API Gateway.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/microservices-api-gateway.git
-   cd microservices-api-gateway
+   git clone https://github.com/iammahesh123/Task-Management-System.git
+   cd Task-Management-System
