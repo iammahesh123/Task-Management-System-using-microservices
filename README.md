@@ -18,8 +18,8 @@ This repository contains a microservices project configured with an API Gateway.
 
 - `service-1`: User Service
 - `service-2`: Task Service
-- 'service-3': Task Submission
-- 'service-4': Server configuration
+- `service-3`: Task Submission
+- `service-4`: Server configuration
 - `api-gateway`: API Gateway module
 
 ## Getting Started
