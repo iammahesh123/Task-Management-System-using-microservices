@@ -10,7 +10,7 @@ This repository contains a microservices project configured with an API Gateway.
 - Spring Boot
 - Spring Security
 - Spring Cloud
-- API Gateway (e.g., Spring Cloud Gateway, Spring Cloud Routing)
+- API Gateway (Spring Cloud Routing)
 - MongoDB 
 - Microservices Architecture
 
