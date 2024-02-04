@@ -185,8 +185,8 @@ Welcome to the Task Management microservices project! Follow these steps to set 
 
 2. Clone the project repository by running the following command:
    ```bash
-   git clone <repository-url>
-   cd task-management-microservices
+   git clone [<repository-url>](https://github.com/iammahesh123/Task-Management-System-using-microservices.git)
+   cd Task-Management-System-using-microservices
 
 ### Step 2: Run Eureka Server
 
@@ -194,9 +194,9 @@ Welcome to the Task Management microservices project! Follow these steps to set 
 
 2. Start the Eureka Server using the following command::
    ```bash
-   cd eureka
+   cd EurekaServerConfiguration
    ./gradlew bootRun
-3.Open your web browser and visit http://localhost:8761 to access the Eureka Server dashboard.
+3.Open your web browser and visit http://localhost:8081 to access the Eureka Server dashboard.
 
 ### Step 3: Run Microservices
 For each microservice (UserService, TaskService, TaskSubmissionService), navigate to its directory and run it. Here's an example for UserService:
@@ -215,12 +215,12 @@ For each microservice (UserService, TaskService, TaskSubmissionService), navigat
 
 2. Start the API Gateway using the following command:
    ```bash
-   cd api-gateway
+   cd APIGateway
    ./gradlew bootRun
 3.Repeat the process for TaskService and TaskSubmissionService.
 
 ### Step 5: Verify Local Setup
-Open your web browser and visit http://localhost:8080 to access the API Gateway.
+Open your web browser and visit http://localhost:8089 to access the API Gateway.
 You've successfully set up the Task Management microservices project on your local machine! Feel free to explore and test the functionalities.
 
 Feel free to copy and paste this version into your README file. Let me know if there's anything else I can help you with!
