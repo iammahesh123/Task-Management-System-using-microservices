@@ -20,7 +20,9 @@ This project implements a Task Management system using microservices architectur
 - `service-2`: Task Service
 - `service-3`: Task Submission
 - `service-4`: Server configuration
-- `api-gateway`: API Gateway 
+- `api-gateway`: API Gateway
+
+## User Service
 
 ## Getting Started
 
