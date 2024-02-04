@@ -32,17 +32,17 @@ The `UserService` microservice is responsible for managing user-related operatio
 #### Features:
 
 - **User Registration:**
-  - Endpoint: `POST /api/users/register`
+  - Endpoint: `POST auth/signup`
   - Allows new users to register by providing necessary details.
   - Utilizes web security to ensure secure registration.
 
 - **User Authentication:**
-  - Endpoint: `POST /api/users/login`
+  - Endpoint: `POST auth/signin`
   - Implements web security and JWT token authentication for secure user login.
   - Generates a JWT token upon successful authentication.
 
 - **Get User Details:**
-  - Endpoint: `GET /api/users/{userId}`
+  - Endpoint: `GET /api/user/profile`
   - Retrieves user details based on the provided user ID.
 
 #### Security:
