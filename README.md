@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a microservices project configured with an API Gateway. The goal of this project is to demonstrate best practices in microservices architecture and API Gateway configuration.
+This project implements a Task Management system using microservices architecture. The system consists of three main microservices: UserService, TaskService, and TaskSubmissionService. Additionally, Eureka is used for service discovery, and an API Gateway is implemented to manage API requests.
 
 ## Technologies Used
 
