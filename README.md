@@ -4,6 +4,9 @@
 
 This project implements a Task Management system using microservices architecture. The system consists of three main microservices: UserService, TaskService, and TaskSubmissionService. Additionally, Eureka is used for service discovery, and an API Gateway is implemented to manage API requests.
 
+## Microservices Architecture
+![Task Management System Architecture](https://github.com/iammahesh123/Task-Management-System/raw/master/tms.png)
+
 ## Technologies Used
 
 - Java
