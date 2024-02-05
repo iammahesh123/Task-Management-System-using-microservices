@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImplementation implements UserService {
+public class UserServiceImplementation implements UserService {ōōōōōōōōōōōōōōōō
 
     @Autowired
     private UserRepository userRepository;
