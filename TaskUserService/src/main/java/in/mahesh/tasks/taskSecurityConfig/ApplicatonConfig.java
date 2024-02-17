@@ -24,10 +24,13 @@ public class ApplicatonConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.authorizeRequests(
-						authorize -> authorize.requestMatchers("/api/**").authenticated().anyRequest().permitAll())
-				.addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class).csrf(csrf -> csrf.disable())
-				.cors(cors -> cors.configurationSource(corsConfigurationSource())).httpBasic(Customizer.withDefaults())
-				.formLogin(Customizer.withDefaults());
+						authorize -> authorize.requestMatchers("/api/**")
+						.authenticated().anyRequest().permitAll())
+				.addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
+				.csrf(csrf -> csrf.disable())
+				.cors(cors -> cors.configurationSource(corsConfigurationSource()));
+				//.httpBasic(Customizer.withDefaults())
+				//.formLogin(Customizer.withDefaults());
 		return http.build();
 	}
 
@@ -36,7 +39,7 @@ public class ApplicatonConfig {
 			@Override
 			public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
 				CorsConfiguration ccfg = new CorsConfiguration();
-				ccfg.setAllowedOrigins(Collections.singletonList("*"));
+				ccfg.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
 				ccfg.setAllowedMethods(Collections.singletonList("*"));
 				ccfg.setAllowCredentials(true);
 				ccfg.setAllowedHeaders(Collections.singletonList("*"));

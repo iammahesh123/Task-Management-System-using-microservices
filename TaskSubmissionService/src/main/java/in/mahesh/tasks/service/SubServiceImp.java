@@ -17,53 +17,73 @@ public class SubServiceImp implements SubmissionService {
 	private SubRepository subRepository;
 
 	@Autowired
-	private TaskService taskService;
-	
+	private  TaskService taskService;
 
 	@Override
 	public TaskSubmission submitTask(String taskId, String githubLink, String userId, String jwt) throws Exception {
-		TaskDTO task = taskService.getTaskById(taskId, jwt);
-		if (task != null) {
-			TaskSubmission sub = new TaskSubmission();
-			sub.setTaskId(taskId);
-			sub.setUserId(userId);
-			sub.setGithubLink(githubLink);
-			sub.setSubmissionTime(LocalDateTime.now());
-			return subRepository.save(sub);
-		}
-		throw new Exception("Task not found with this id" + taskId);
-
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public TaskSubmission getTaskSubmissionById(String submissionId) throws Exception {
 		// TODO Auto-generated method stub
-		return subRepository.findById(submissionId)
-				.orElseThrow(() -> new Exception("Task submission is not found with id" + submissionId));
+		return null;
 	}
 
 	@Override
-	public List<TaskSubmission> getAllTaskSubmission() {
+	public List<TaskSubmission> getAllTaskSubmissions() {
 		// TODO Auto-generated method stub
-		return subRepository.findAll();
+		return null;
 	}
 
 	@Override
 	public List<TaskSubmission> getTaskSubmissionByTaskId(String taskId) {
 		// TODO Auto-generated method stub
-		return subRepository.findByTaskId(taskId);
+		return null;
 	}
 
 	@Override
-	public TaskSubmission acceptDedlineSubmission(String id, String status) throws Exception {
-		TaskSubmission sub = getTaskSubmissionById(id);
-		sub.setStatus(status);
-		if (status.equals("ACCEPT")) {
-			taskService.completeTask(sub.getTaskId());
-
-		}
-
-		return subRepository.save(sub);
+	public TaskSubmission acceptDeclineSubmission(String id, String status) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	/*
+	 * @Override public TaskSubmission submitTask(String taskId, String githubLink,
+	 * String userId, String jwt) throws Exception { // TODO Auto-generated method
+	 * stub return null; }
+	 */
+	/*
+	 * @Override public TaskSubmission getTaskSubmissionById(String submissionId)
+	 * throws Exception { // TODO Auto-generated method stub return null; }
+	 */
+
+	/*
+	 * @Override public List<TaskSubmission> getAllTaskSubmissions() { // TODO
+	 * Auto-generated method stub return null; }
+	 */
+
+	/*
+	 * @Override public List<TaskSubmission> getTaskSubmissionByTaskId(String
+	 * taskId) { // TODO Auto-generated method stub return null; }
+	 */
+
+	/*
+	 * @Override public TaskSubmission acceptDeclineSubmission(String id, String
+	 * status) throws Exception { // TODO Auto-generated method stub return null; }
+	 */
+	
+
+
+
+
+
+
+
+
+
+
+	
 
 }

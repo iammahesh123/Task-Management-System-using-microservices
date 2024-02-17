@@ -22,6 +22,10 @@ public class CustomerServiceImplementation implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
     
+    public CustomerServiceImplementation(UserRepository userRepository) {
+		this.userRepository=userRepository;
+	}
+    
     
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

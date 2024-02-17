@@ -44,6 +44,7 @@ public class JwtProvider {
 	public static String getEmailFromJwtToken(String jwt) {
         jwt = jwt.substring(7); // Assuming "Bearer " is removed from the token
         try {
+        	//Claims claims=Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
             Claims claims = Jwts.parser().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
             String email = String.valueOf(claims.get("email"));
             System.out.println("Email extracted from JWT: " + claims);

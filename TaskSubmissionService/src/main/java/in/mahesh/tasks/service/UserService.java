@@ -12,7 +12,10 @@ import in.mahesh.tasks.submissionModel.UserDTO;
 @FeignClient(name = "USER-SERVICE",url = "http://localhost:8081")
 public interface UserService {
 	
-	@GetMapping("/api/user/profile")
-    public UserDTO getUserProfile(@RequestHeader("Authorization") String jwt);
+
+    @GetMapping("/api/users/profile")
+	public UserDTO getUserProfileHandler(@RequestHeader("Authorization") String jwt);
+
 
 }
+ 

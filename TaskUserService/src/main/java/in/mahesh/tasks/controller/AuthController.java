@@ -1,9 +1,12 @@
 package in.mahesh.tasks.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import in.mahesh.tasks.exception.UserException;
 import in.mahesh.tasks.repository.UserRepository;
 import in.mahesh.tasks.request.LoginRequest;
 import in.mahesh.tasks.response.AuthResponse;
 import in.mahesh.tasks.service.CustomerServiceImplementation;
+import in.mahesh.tasks.service.UserService;
 import in.mahesh.tasks.taskSecurityConfig.JwtProvider;
 import in.mahesh.tasks.usermodel.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +37,14 @@ public class AuthController {
     @Autowired
     private CustomerServiceImplementation customUserDetails;
     
-    
+    @Autowired
+    private UserService userService;
 
+
+
+    @HystrixCommand(fallbackMethod = "createUserFallback")
     @PostMapping("/signup")
-    public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws Exception {
+    public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
         String email = user.getEmail();
         String password = user.getPassword();
         String fullName = user.getFullName();
@@ -46,7 +53,7 @@ public class AuthController {
 
         User isEmailExist = userRepository.findByEmail(email);
         if (isEmailExist != null) {
-             throw new Exception("Email is used in another account");
+        	throw new UserException("Email Is Already Used With Another Account");
 
         }
         User createdUser = new User();
@@ -55,9 +62,9 @@ public class AuthController {
         createdUser.setMobile(mobile);
         createdUser.setRole(role);
         createdUser.setPassword(passwordEncoder.encode(password));
-        @SuppressWarnings("unused")
+        
 		User savedUser = userRepository.save(createdUser);
-//       userRepository.save(savedUser);
+          userRepository.save(savedUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(email,password);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = JwtProvider.generateToken(authentication);
@@ -70,12 +77,21 @@ public class AuthController {
         return new ResponseEntity<AuthResponse>(authResponse, HttpStatus.OK);
 
     }
-    
-   
+    public ResponseEntity<AuthResponse> createUserFallback(User user, Throwable throwable) {
+        // Handle the fallback logic here
+        // You can return a default response or log the error
+        AuthResponse authResponse = new AuthResponse();
+        authResponse.setMessage("User registration failed due to a temporary issue.");
+        authResponse.setStatus(false);
+        return new ResponseEntity<>(authResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
+
+
+    @HystrixCommand(fallbackMethod = "signinFallback")
     @PostMapping("/signin")
     public ResponseEntity<AuthResponse> signin(@RequestBody LoginRequest loginRequest) {
-        String username = loginRequest.getUsername();
+        String username = loginRequest.getemail();
         String password = loginRequest.getPassword();
 
         System.out.println(username+"-------"+password);
@@ -91,6 +107,14 @@ public class AuthController {
         authResponse.setStatus(true);
 
         return new ResponseEntity<>(authResponse,HttpStatus.OK);
+    }
+    public ResponseEntity<AuthResponse> signinFallback(LoginRequest loginRequest, Throwable throwable) {
+        // Handle the fallback logic here
+        // You can return a default response or log the error
+        AuthResponse authResponse = new AuthResponse();
+        authResponse.setMessage("Login failed due to a temporary issue.");
+        authResponse.setStatus(false);
+        return new ResponseEntity<>(authResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 

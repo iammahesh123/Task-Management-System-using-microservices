@@ -1,14 +1,15 @@
 package in.mahesh.tasks.service;
 
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import in.mahesh.tasks.enums.TaskStatus;
 import in.mahesh.tasks.repository.TaskRepository;
 import in.mahesh.tasks.taskModel.Task;
-import in.mahesh.tasks.taskModel.TaskStatus;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,10 +17,13 @@ public class TaskServiceImplementation implements TaskService {
 	
 	@Autowired
 	private TaskRepository taskRepository;
+	 public TaskServiceImplementation(TaskRepository taskRepository) {
+	        this.taskRepository = taskRepository;
+	    }
 
 	@Override
     public Task create(Task task, String requestRole) throws Exception {
-        if (!"ROLE_ADMIN".equals(requestRole)) {
+        if (!requestRole.equals("ROLE_ADMIN")) {
             throw new Exception("Only admin can create tasks");
         }
 
@@ -30,13 +34,14 @@ public class TaskServiceImplementation implements TaskService {
     }
 
 	@Override
-	public Task getTaskById(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return taskRepository.findById(id)
-				.orElseThrow(() -> new Exception("Task not found with id " + id));
+	public Task getTaskById(String id) {
+	    return taskRepository.findById(id)
+	                         .orElse(null); // Return null if task is not found
 	}
 
-	@Override
+	 
+
+
 	public List<Task> getAllTasks(TaskStatus taskStatus) {
 		List<Task> allTasks = taskRepository.findAll();
 
@@ -60,9 +65,10 @@ public class TaskServiceImplementation implements TaskService {
 		if (updatedTask.getDescription() != null) {
 			existingTasks.setDescription(updatedTask.getDescription());
 		}
-		if (updatedTask.getStatus() != null) {
-			existingTasks.setStatus(updatedTask.getStatus());
-		}
+		
+		  if (updatedTask.getStatus() != null) {
+		  existingTasks.setStatus(updatedTask.getStatus()); }
+		 
 		if (updatedTask.getDeadline() != null) {
 			existingTasks.setDeadline(updatedTask.getDeadline());
 		}
@@ -87,20 +93,10 @@ public class TaskServiceImplementation implements TaskService {
 		return taskRepository.save(task);
 	}
 
-	/*
-	 * @Override public List<Task> assignedUsersTask(String userId, String
-	 * taskStatus) { List<Task> allTask =
-	 * taskRepository.findByAssignedUserId(userId);
-	 * 
-	 * List<Task> fliteredTasks = allTask.stream().filter( task -> taskStatus ==
-	 * null || task.getStatus().name().equalsIgnoreCase(taskStatus.toString())
-	 * 
-	 * ).collect(Collectors.toList()); // TODO Auto-generated method stub return
-	 * fliteredTasks; }
-	 */
+	
 	
 	public List<Task> assignedUsersTask(String userId, TaskStatus taskStatus) {
-        List<Task> allTasks = taskRepository.findByAssignedUserId(userId);
+        List<Task> allTasks = taskRepository.findByassignedUserId(userId);
 
         return allTasks.stream()
                 .filter(task -> taskStatus == null || task.getStatus() == taskStatus)
@@ -116,10 +112,34 @@ public class TaskServiceImplementation implements TaskService {
 		return taskRepository.save(task);
 	}
 
-	/*
-	 * @Override public List<Task> assignedUsersTask(String userId, String
-	 * taskStatus) { // TODO Auto-generated method stub return null; }
-	 */
+	@Override
+	public List<Task> getAllTasks(TaskStatus taskStatus, String sortByDeadline, String sortByCreatedAt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	 public List<Task> assignedUsersTask(String userId,TaskStatus status, String sortByDeadline, String sortByCreatedAt) {
+	        List<Task> allTasks = taskRepository.findByassignedUserId(userId);
+
+
+	        List<Task> filteredTasks = allTasks.stream()
+	                .filter(task -> status == null || task.getStatus().name().equalsIgnoreCase(status.toString()))
+
+
+	                .collect(Collectors.toList());
+
+
+	        if (sortByDeadline != null && !sortByDeadline.isEmpty()) {
+	            filteredTasks.sort(Comparator.comparing(Task::getDeadline));
+	        } else if (sortByCreatedAt != null && !sortByCreatedAt.isEmpty()) {
+	           // filteredTasks.sort(Comparator.comparing(Task::getCreatedAt));
+	        }
+
+	        return filteredTasks;
+
+	    }
+
+	
 
 
 }

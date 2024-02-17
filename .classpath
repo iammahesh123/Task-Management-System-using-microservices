@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="APIGateWay/src/main/java"/>
+	<classpathentry kind="src" path="APIGateWay/src/test/java"/>
+	<classpathentry kind="src" path="EurekaServerConfiguration/src/main/java"/>
+	<classpathentry kind="src" path="EurekaServerConfiguration/src/test/java"/>
+	<classpathentry kind="src" path="TaskService/src/main/java"/>
+	<classpathentry kind="src" path="TaskService/src/test/java"/>
+	<classpathentry kind="src" path="TaskSubmissionService/src/main/java"/>
+	<classpathentry kind="src" path="TaskSubmissionService/src/test/java"/>
+	<classpathentry kind="src" path="TaskUserService/src/main/java"/>
+	<classpathentry kind="src" path="TaskUserService/src/test/java"/>
+	<classpathentry kind="src" path="UserService/src/main/java"/>
+	<classpathentry kind="src" path="UserService/src/test/java"/>
+	<classpathentry kind="src" path="ZipkinDemoProject/src/main/java"/>
+	<classpathentry kind="src" path="ZipkinDemoProject/src/test/java"/>
+	<classpathentry kind="src" path="ZipkinProject/src/main/java"/>
+	<classpathentry kind="src" path="ZipkinProject/src/test/java"/>
+	<classpathentry kind="lib" path="APIGateWay/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="EurekaServerConfiguration/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="TaskService/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="TaskSubmissionService/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="TaskUserService/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="UserService/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="ZipkinDemoProject/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="ZipkinProject/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="APIGateWay/bin/main"/>
+</classpath>

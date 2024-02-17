@@ -1,7 +1,11 @@
 package in.mahesh.tasks.usermodel;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,9 +21,26 @@ public class User {
 	private String id;
 	private String fullName;
 	private String email;
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
-	private String role;
+	private String role = "ROLE_CUSTOMER";
 	private String mobile;
+	
+	private List<Long> completedTasks;
+	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public List<Long> getCompletedTasks() {
+		return completedTasks;
+	}
+	public void setCompletedTasks(List<Long> completedTasks) {
+		this.completedTasks = completedTasks;
+	}
 	public String get_id() {
 		return id;
 	}

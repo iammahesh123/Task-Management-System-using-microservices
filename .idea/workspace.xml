@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c67da803-df2c-4e52-b76f-66886ddeae27" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APIGateWay/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/APIGateWay/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APIGateWay/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/APIGateWay/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServerConfiguration/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServerConfiguration/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServerConfiguration/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServerConfiguration/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/service/TaskServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/service/TaskServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/taskModel/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/taskModel/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/java/in/mahesh/tasks/taskModel/TaskStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TaskService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/controller/SubController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/controller/SubController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/repository/SubRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/repository/SubRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/service/SubServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/service/SubServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/service/SubmissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/service/SubmissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/submissionModel/TaskDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/submissionModel/TaskDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/submissionModel/TaskSubmission.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/submissionModel/TaskSubmission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/submissionModel/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/java/in/mahesh/tasks/submissionModel/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskSubmissionService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TaskSubmissionService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/request/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/service/CustomerServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/service/CustomerServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/service/UserServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/service/UserServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/taskSecurityConfig/ApplicatonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/taskSecurityConfig/ApplicatonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/taskSecurityConfig/JwtConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/taskSecurityConfig/JwtConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/taskSecurityConfig/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/taskSecurityConfig/JwtProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/usermodel/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/java/in/mahesh/tasks/usermodel/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskUserService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TaskUserService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tms.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/EurekaServerConfiguration">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2cMQfo36h3efNXGKSYcbJDFQpZy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.C:/Users/Mahesh/Documents/workspace-spring-tool-suite-4-4.21.0.RELEASE/Task ManagementSystem/EurekaServerConfiguration.executor": "Run",
+    "Gradle.Gradle.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Mahesh/Documents/workspace-spring-tool-suite-4-4.21.0.RELEASE/Task ManagementSystem/TaskUserService",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="C:/Users/Mahesh/Documents/workspace-spring-tool-suite-4-4.21.0.RELEASE/Task ManagementSystem/EurekaServerConfiguration" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/EurekaServerConfiguration" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c67da803-df2c-4e52-b76f-66886ddeae27" name="Changes" comment="" />
+      <created>1707919077382</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707919077382</updated>
+      <workItem from="1707919078192" duration="1548000" />
+      <workItem from="1707920639016" duration="14000" />
+      <workItem from="1707920675885" duration="12000" />
+      <workItem from="1707924022325" duration="42000" />
+      <workItem from="1708164783782" duration="156000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

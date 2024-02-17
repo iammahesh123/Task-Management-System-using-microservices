@@ -1,5 +1,8 @@
 package in.mahesh.tasks.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import in.mahesh.tasks.exception.UserException;
+import in.mahesh.tasks.response.ApiResponse;
 import in.mahesh.tasks.service.UserService;
 import in.mahesh.tasks.usermodel.User;
 
@@ -11,30 +14,69 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	public UserController(UserService userService) {
+		this.userService = userService;
+	}
 
-	/*
-	 * http://localhost:8081/api/user Take login JWT token in bearer token
-	 * eyJhbGciOiJIUzI1NiJ9.
-	 * eyJpYXQiOjE3MDY2MjUzNjcsImV4cCI6MTcwNjcxMTc2NywiZW1haWwiOiJtYWh
-	 * lc2hrbTUwMDFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOiIifQ.HLL-
-	 * WbSpsgBJQSErID0B3ICUtPu915SbSRLQ9BX60gg Output response: [ { "fullName":
-	 * "mahesh Kadambala", "email": "maheshkm5001@gmail.com", "password":
-	 * "$2a$10$pR26KjYca3F0D0QLoJEwaOCezAUBiSJuVb5v/4CfcDue2LsHFfZde", "role":
-	 * "Customer Role", "mobile": "9573327520", "_id": "65b908e0e26b2f52e437f06f" }
-	 * ]
-	 */
 
+	@HystrixCommand(fallbackMethod = "fallbackForGetUserProfile")
 	@GetMapping("/profile")
-	public ResponseEntity<User> getUserProfile(@RequestHeader("Authorization") String jwt) {
-		User user = userService.getUserProfile(jwt);
+	public ResponseEntity<User> getUserProfile(@RequestHeader("Authorization") String jwt) throws UserException {
+		
+		User user = userService.findUserProfileByJwt(jwt);
+		user.setPassword(null);
 		System.out.print(user);
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
+
+	public ResponseEntity<User> fallbackForGetUserProfile(String jwt, Throwable throwable) {
+		// Handle the fallback logic here
+		// For example, you can return a default user or a custom error message
+		return new ResponseEntity<>(new User(), HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
+	@HystrixCommand(fallbackMethod = "fallbackForFindUserById")
+	@GetMapping("/api/users/{userId}")
+	public ResponseEntity<User> findUserById(
+			@PathVariable String userId,
+			@RequestHeader("Authorization") String jwt) throws UserException {
+
+		User user = userService.findUserById(userId);
+		user.setPassword(null);
+
+		return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
+	}
+
+	public ResponseEntity<User> fallbackForFindUserById(String userId, String jwt, Throwable throwable) {
+		// Handle the fallback logic here
+		// For example, you can return a default user or a custom error message
+		return new ResponseEntity<>(new User(), HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
+
+	@HystrixCommand(fallbackMethod = "fallbackForFindAllUsers")
+	@GetMapping("/api/users")
+	public ResponseEntity<List<User>> findAllUsers(
+
+			@RequestHeader("Authorization") String jwt)  {
+
+		List<User> users = userService.findAllUsers();
+
+
+		return new ResponseEntity<>(users, HttpStatus.ACCEPTED);
+	}
+	public ResponseEntity<List<User>> fallbackForFindAllUsers(String jwt, Throwable throwable) {
+		// Handle the fallback logic here
+		// For example, you can return an empty list or a custom error message
+		return new ResponseEntity<>(List.of(), HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
 
 	@GetMapping()
 	public ResponseEntity<?> getUsers(@RequestHeader("Authorization") String jwt) {
@@ -47,5 +89,4 @@ public class UserController {
 			return new ResponseEntity<>("Error retrieving users", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-
 }
