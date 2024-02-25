@@ -172,6 +172,7 @@ The `API Gateway` serves as the single entry point for the Task Management syste
 - **Simplified Communication:**
   - Enhances the simplicity of communication between client applications and microservices.
   - Utilizes Spring Cloud Gateway's flexibility for routing and load balancing.
+## Final Endpoints
 
 
 
