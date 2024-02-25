@@ -173,7 +173,7 @@ The `API Gateway` serves as the single entry point for the Task Management syste
   - Enhances the simplicity of communication between client applications and microservices.
   - Utilizes Spring Cloud Gateway's flexibility for routing and load balancing.
 ## Final Endpoints
-
+![Task Management System Architecture](https://github.com/iammahesh123/Task-Management-System/raw/master/endpoints.png)
 
 
 ## Getting Started
